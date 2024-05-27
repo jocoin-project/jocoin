@@ -79,7 +79,7 @@ git merge commit are mentioned.
 - #9042 `5bcb05d` [rpc] ParseHash: Fail when length is not 64 (MarcoFalke)
 - #9194 `f26dab7` Add option to return non-segwit serialization via rpc (instagibbs)
 - #9347 `b711390` [0.13.2] wallet/rpc backports (MarcoFalke)
-- #9292 `c365556` Complain when unknown rpcserialversion is specified (sipa)
+- #9393 `c365556` Complain when unknown rpcserialversion is specified (sipa)
 - #9322 `49a612f` [qa] Don't set unknown rpcserialversion (MarcoFalke)
 
 ### Block and transaction handling

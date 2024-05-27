@@ -108,7 +108,7 @@ public:
         pchMessageStart[1] = 0x4a;
         pchMessageStart[2] = 0x88;
         pchMessageStart[3] = 0x00;
-        nDefaultPort = 9292;
+        nDefaultPort = 9393;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 40;
         m_assumed_chain_state_size = 2;
