@@ -123,6 +123,12 @@ public:
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
+        vSeeds.emplace_back("139.180.214.31");
+        vSeeds.emplace_back("149.28.235.170");
+        vSeeds.emplace_back("140.82.6.80");
+        vSeeds.emplace_back("64.176.219.137");
+        vSeeds.emplace_back("149.28.45.189");
+
         vSeeds.emplace_back("seed1.jocoin.io");
         vSeeds.emplace_back("seed2.jocoin.io");
 
