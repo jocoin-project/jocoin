@@ -75,7 +75,7 @@ def download_binary(tag, args) -> int:
     os = 'linux' # TODO
     tarball = 'jocoin-{tag}-{platform}.tar.gz'.format(
         tag=tag[1:], platform=args.platform)
-    tarballUrl = 'https://download.jocoin.org/{release_path}/{os}/{tarball}'.format(
+    tarballUrl = 'https://download.jocoin.io/{release_path}/{os}/{tarball}'.format(
         release_path=release_path, os=os, tarball=tarball)
 
     print('Fetching: {tarballUrl}'.format(tarballUrl=tarballUrl))

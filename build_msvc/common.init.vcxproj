@@ -77,7 +77,7 @@
     <Link>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
-      <AdditionalOptions>/JOCOG:OFF</AdditionalOptions>
+      <AdditionalOptions>/LTCG:OFF</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
 

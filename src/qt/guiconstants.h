@@ -43,7 +43,7 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Jocoin"
-#define QAPP_ORG_DOMAIN "jocoin.org"
+#define QAPP_ORG_DOMAIN "jocoin.io"
 #define QAPP_APP_NAME_DEFAULT "Jocoin-Qt"
 #define QAPP_APP_NAME_TESTNET "Liteocin-Qt-testnet"
 #define QAPP_APP_NAME_SIGNET "Jocoin-Qt-signet"
