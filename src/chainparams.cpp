@@ -69,7 +69,7 @@ public:
         consensus.nSubsidyHalvingInterval = 840000;
         consensus.BIP16Height = 218579; // 87afb798a3ad9378fcd56123c81fb31cfd9a8df4719b9774d71730c16315a092 - October 1, 2012
         consensus.BIP34Height = 710000;
-        consensus.BIP34Hash = uint256S("0xfa09d204a83a768ed5a7c8d441fa62f2043abf420cff1226c7b4329aeb9d51cf");
+        consensus.BIP34Hash = uint256();
         consensus.BIP65Height = 918684; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
         consensus.BIP66Height = 811879; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
         consensus.CSVHeight = 1201536; // 53e0af7626f7f51ce9f3b6cfc36508a5b1d2f6c4a75ac215dc079442692a4c0b
@@ -96,8 +96,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nStartHeight = 2217600; // End Feb 2022
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeoutHeight = 2427264; // 364 days later
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000100010001");// Start
-        consensus.defaultAssumeValid = uint256S("0x62e2e3d21343a00994d38a63524867507dbeee6850e8fbf02e9c47a3ccf82f24"); // 2186382
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010");// Start
+        consensus.defaultAssumeValid = uint256S("0xedb272e003bf8d29e0264951217007194f6f30d6aaf0c212a03723efe46c93af"); // 0
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -123,6 +123,12 @@ public:
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
+        vSeeds.emplace_back("139.180.214.31");
+        vSeeds.emplace_back("149.28.235.170");
+        vSeeds.emplace_back("140.82.6.80");
+        vSeeds.emplace_back("64.176.219.137");
+        vSeeds.emplace_back("149.28.45.189");
+
         vSeeds.emplace_back("seed1.jocoin.io");
         vSeeds.emplace_back("seed2.jocoin.io");
 
