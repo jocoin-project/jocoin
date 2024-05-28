@@ -96,8 +96,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nStartHeight = 2217600;
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeoutHeight = 2427264;
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010");// Start
-        consensus.defaultAssumeValid = uint256S("0xedb272e003bf8d29e0264951217007194f6f30d6aaf0c212a03723efe46c93af"); // 0
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000300030");
+        consensus.defaultAssumeValid = uint256S("0x2f10f2a4e4c07f7aaefdfcc7fadea39ff9a9d56948eec2aa2a95048c54bd205a");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -152,14 +152,16 @@ public:
         checkpointData = {
             {
                 {  0, uint256S("0xedb272e003bf8d29e0264951217007194f6f30d6aaf0c212a03723efe46c93af")},
+                {  1, uint256S("0xe9318ae3dcce3ef08e90a3826720ec5da85b97a6e1395bd710c5d4f1028a9437")},
+                {  2, uint256S("0x2f10f2a4e4c07f7aaefdfcc7fadea39ff9a9d56948eec2aa2a95048c54bd205a")},
             }
         };
 
         chainTxData = ChainTxData{
-            // Data from rpc: getchaintxstats 4096 62e2e3d21343a00994d38a63524867507dbeee6850e8fbf02e9c47a3ccf82f24
-            /* nTime    */ 1716800468,
-            /* nTxCount */ 0,
-            /* dTxRate  */ 0.0
+            // Data from rpc: getchaintxstats
+            /* nTime    */ 1716829065,
+            /* nTxCount */ 2,
+            /* dTxRate  */ 0.03333333333333333
         };
     }
 };
