@@ -96,8 +96,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nStartHeight = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeoutHeight = 10000;
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000300030");
-        consensus.defaultAssumeValid = uint256S("0x9f8f15a59911d4bbcb1dcb8409e657e27d69db438be260800d4221694ab92302");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000017aafe021");
+        consensus.defaultAssumeValid = uint256S("0x05e57397aed3d01d6b149d59d86aabd1010c9c386190bec963d032bd4f0ee850");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -123,6 +123,8 @@ public:
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
+
+
         vSeeds.emplace_back("139.180.214.31");
         vSeeds.emplace_back("149.28.235.170");
         vSeeds.emplace_back("140.82.6.80");
@@ -131,6 +133,7 @@ public:
 
         vSeeds.emplace_back("seed1.jocoin.io");
         vSeeds.emplace_back("seed2.jocoin.io");
+
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,43);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -154,14 +157,20 @@ public:
                 {  0, uint256S("0xedb272e003bf8d29e0264951217007194f6f30d6aaf0c212a03723efe46c93af")},
                 {  1, uint256S("0x93423cac860207c542ad6f947c536ced5436a12918a00fbd3bbc9e8249db0a43")},
                 {  2, uint256S("0x9f8f15a59911d4bbcb1dcb8409e657e27d69db438be260800d4221694ab92302")},
+                {  16, uint256S("0xd85d30836e9d39ad2479a24b48b026d3eeb81cd871e0c0ea13b0779cd00cbc8a")},
+                {  615, uint256S("0xc5af9f10b76ef20469ea0d2d8c43926d5feb5587555c25a483da8b44e18d46ab")},
+                {  1400, uint256S("0x4de805aff7e2847149120a27666aeed44678738c9aad4c51a8b6de02ab460497")}, // mweb activation started
+                {  2800, uint256S("0xa6f7bf9b17a9a32e5bcd7c8a71332fb136357da540b1d5285dcdc1913f877467")}, // mweb activation locked_in
+                {  4170, uint256S("0x476da45a411f6ae85f48ed7cbf8dcfd28f59750e4f29d07eb9f79ccc1880a1ca")},
+                {  4200, uint256S("0x05e57397aed3d01d6b149d59d86aabd1010c9c386190bec963d032bd4f0ee850")}, // mweb activation complete
             }
         };
 
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats
-            /* nTime    */ 1716993677,
-            /* nTxCount */ 2,
-            /* dTxRate  */ 0.02105263157894737
+            /* nTime    */ 1717011194,
+            /* nTxCount */ 4287,
+            /* dTxRate  */ 0.2676531185615284
         };
     }
 };
@@ -225,6 +234,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
+
         vSeeds.emplace_back("testnet-seed1.jocoin.io");
         vSeeds.emplace_back("testnet-seed2.jocoin.io");
 
