@@ -28,7 +28,7 @@ Drag Jocoin Core to your applications folder, and then run Jocoin Core.
 
 ### Need Help?
 
-* See the documentation at the [Jocoin Wiki](https://jocoin.info/) for help and more information.
+* See the documentation at the [Jocoin Wiki](https://jocoin.io/) for help and more information.
 * Ask for help on [#jocoin](https://webchat.freenode.net/#jocoin) on Freenode. If you don't have an IRC client, use [webchat here](https://webchat.freenode.net/#jocoin).
 * Ask for help on the [JocoinTalk](https://jocointalk.io/) forums, in the [Technical Support board](https://jocointalk.io/c/technical-support).
 
