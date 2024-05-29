@@ -67,13 +67,13 @@ public:
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 840000;
-        consensus.BIP16Height = 218579; // 87afb798a3ad9378fcd56123c81fb31cfd9a8df4719b9774d71730c16315a092 - October 1, 2012
+        consensus.BIP16Height = 218579;
         consensus.BIP34Height = 710000;
         consensus.BIP34Hash = uint256();
-        consensus.BIP65Height = 918684; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
-        consensus.BIP66Height = 811879; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
-        consensus.CSVHeight = 1201536; // 53e0af7626f7f51ce9f3b6cfc36508a5b1d2f6c4a75ac215dc079442692a4c0b
-        consensus.SegwitHeight = 1201536; // 0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893
+        consensus.BIP65Height = 918684;
+        consensus.BIP66Height = 811879;
+        consensus.CSVHeight = 1201536;
+        consensus.SegwitHeight = 1201536;
         consensus.MinBIP9WarningHeight = 1209600; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
@@ -88,16 +88,16 @@ public:
 
         // Deployment of Taproot (BIPs 340-342)
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nStartHeight = 2161152; // End November 2021
-        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeoutHeight = 2370816; // 364 days later
+        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nStartHeight = 2161152;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeoutHeight = 2370816;
 
         // Deployment of MWEB (LIP-0002, LIP-0003, and LIP-0004)
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].bit = 4;
-        consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nStartHeight = 2217600; // End Feb 2022
-        consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeoutHeight = 2427264; // 364 days later
+        consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nStartHeight = 2217600;
+        consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeoutHeight = 2427264;
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010");// Start
-        consensus.defaultAssumeValid = uint256S("0xedb272e003bf8d29e0264951217007194f6f30d6aaf0c212a03723efe46c93af"); // 0
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000300030");
+        consensus.defaultAssumeValid = uint256S("0x2f10f2a4e4c07f7aaefdfcc7fadea39ff9a9d56948eec2aa2a95048c54bd205a");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -110,8 +110,8 @@ public:
         pchMessageStart[3] = 0x00;
         nDefaultPort = 9393;
         nPruneAfterHeight = 100000;
-        m_assumed_blockchain_size = 40;
-        m_assumed_chain_state_size = 2;
+        m_assumed_blockchain_size = 0;
+        m_assumed_chain_state_size = 0;
 
         genesis = CreateGenesisBlock(1716800468, 2084606429, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -152,14 +152,16 @@ public:
         checkpointData = {
             {
                 {  0, uint256S("0xedb272e003bf8d29e0264951217007194f6f30d6aaf0c212a03723efe46c93af")},
+                {  1, uint256S("0xe9318ae3dcce3ef08e90a3826720ec5da85b97a6e1395bd710c5d4f1028a9437")},
+                {  2, uint256S("0x2f10f2a4e4c07f7aaefdfcc7fadea39ff9a9d56948eec2aa2a95048c54bd205a")},
             }
         };
 
         chainTxData = ChainTxData{
-            // Data from rpc: getchaintxstats 4096 62e2e3d21343a00994d38a63524867507dbeee6850e8fbf02e9c47a3ccf82f24
-            /* nTime    */ 1716800468,
-            /* nTxCount */ 0,
-            /* dTxRate  */ 0.0
+            // Data from rpc: getchaintxstats
+            /* nTime    */ 1716829065,
+            /* nTxCount */ 2,
+            /* dTxRate  */ 0.03333333333333333
         };
     }
 };
