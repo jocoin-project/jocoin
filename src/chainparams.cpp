@@ -66,7 +66,7 @@ public:
         strNetworkID = CBaseChainParams::MAIN;
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
-        consensus.nSubsidyHalvingInterval = 840000;
+        consensus.nSubsidyHalvingInterval = 500000;
         consensus.BIP16Height = 218579;
         consensus.BIP34Height = 710000;
         consensus.BIP34Hash = uint256();
