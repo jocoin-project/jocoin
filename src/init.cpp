@@ -1303,19 +1303,46 @@ bool AppInitMain(const util::Ref& context, NodeContext& node, interfaces::BlockA
     LogPrintf("Using data directory %s\n", GetDataDir().string());
 
     // Only log conf file usage message if conf file actually exists.
-    fs::path config_file_path = GetConfigFile(args.GetArg("-conf", BITCOIN_CONF_FILENAME));
+    fs::path config_file_path = GetConfigFile(gArgs.GetArg("-conf", BITCOIN_CONF_FILENAME));
     if (fs::exists(config_file_path)) {
         LogPrintf("Config file: %s\n", config_file_path.string());
-    } else if (args.IsArgSet("-conf")) {
+    } else if (gArgs.IsArgSet("-conf")) {
         // Warn if no conf file exists at path provided by user
         InitWarning(strprintf(_("The specified config file %s does not exist\n"), config_file_path.string()));
     } else {
         // Not categorizing as "Warning" because it's the default behavior
         LogPrintf("Config file: %s (not found, skipping)\n", config_file_path.string());
-    }
 
-    // Log the config arguments to debug.log
-    args.LogArgs();
+        FILE* configFile = fopen(GetConfigFile(gArgs.GetArg("-conf", BITCOIN_CONF_FILENAME)).string().c_str(), "a");
+        if (configFile != NULL) {
+            std::string strHeader = "# Jocoin(JOCO) config file:\n"
+                                    "rpcuser=username\n"
+                                    "rpcpassword=password\n"
+                                    "server=1\n"
+                                    "listen=1\n"
+                                    "daemon=1\n"
+                                    "upnp=1\n"
+                                    "port=9393\n"
+                                    "rpcport=9392\n"
+                                    "rpcbind=127.0.0.1\n"
+                                    "maxconnections=20\n"
+                                    "fallbackfee=0.0001\n"
+                                    "rpcallowip=127.0.0.1\n"
+                                    "deprecatedrpc=accounts\n"
+                                    "\n"
+                                    "# Addnodes:\n"
+                                    "addnode=139.180.214.31\n"
+                                    "addnode=149.28.235.170\n"
+                                    "addnode=140.82.6.80\n"
+                                    "addnode=64.176.219.137\n"
+                                    "addnode=149.28.45.189\n"
+                                    "addnode=seed1.jocoin.io\n"
+                                    "addnode=seed2.jocoin.io\n"
+                                    "\n";
+            fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
+            fclose(configFile);
+        }
+    }
 
     LogPrintf("Using at most %i automatic connections (%i file descriptors available)\n", nMaxConnections, nFD);
 

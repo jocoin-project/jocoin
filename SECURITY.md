@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-To report security issues send an email to contact@jocoin.org (not for support).
+To report security issues send an email to contact@jocoin.io (not for support).
 
 The following keys may be used to communicate sensitive information to developers:
 
